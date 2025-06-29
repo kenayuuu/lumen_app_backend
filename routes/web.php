@@ -16,3 +16,10 @@ $router->group(['prefix' => 'api/map'], function () use ($router) {
     $router->delete('{id}', 'MapController@destroy'); // Delete
 });
 
+$router->group(['prefix' => 'api/kampus'], function () use ($router) {
+    $router->get('/', 'KampusController@index');         // Get all
+    $router->get('{id}', 'KampusController@show');       // Get by ID
+    $router->post('/', 'KampusController@store');        // Create
+    $router->put('{id}', 'KampusController@update');     // Update
+    $router->delete('{id}', 'KampusController@destroy'); // Delete
+});
